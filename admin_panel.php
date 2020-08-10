@@ -29,16 +29,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" data-toggle="Tooltip" title="AdvanceComputerWorldPlatform">Learning Management System</a>
+                <a class="navbar-brand" href="#" data-toggle="Tooltip" title="AdvanceComputerWorldPlatform">Admin Panel</a>
             </div>
             <div>
                 <div class="collapse navbar-collapse" id="target1">
                     <ul class="nav navbar-nav">
                         <li><a href="#ALogin" data-toggle="Tooltip" title="Admin Login">Admin Login</a></li>
                         <li><a href="#TLogin" data-toggle="Tooltip" title="Teacher Login">Teacher Login</a></li>
-                        <li><a href="#SLogin" data-toggle="Tooltip" title="Student Login">Student Login</a></li>
+                        <li><a href="#SLogin" data-toggle="Tooltip" title="Sinup">Student Login</a></li>
+                        <li><a href="login.html" data-toggle="Tooltip" title="Logout">Log Out</a></li>
                         <li><a href="#About" data-toggle="Tooltip" title="About">About</a></li>
-                        <li><a href="#Contact" data-toggle="Tooltip" title="Contact us">Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +47,7 @@
     <div class="container-fluid">
         <div class="container-fluid header">
             <br>
-            <h1 class="text-center">Well Come to Learning Management System</h1>
+            <h1 class="text-center"><?php session_start(); echo $_SESSION['admin']; ?> Well Come To Admin Panel</h1>
             <p class="text-center">Learning Management System is maintained by Mahmood Yousaf</p>
             <br>
         </div>
@@ -55,6 +55,7 @@
             <img src="Mahmood_Yousaf.jpg" class="img-responsive center-block" alt="image is not found" data-toggle="Tooltip" title="Random click of LMS users">
             <figcaption class="figure-caption text-center">University students using LMS</figcaption>
         </figure>
+    </div>
     <div id="ALogin" class="container-fluid body">
         <br><br><br>
         <div class="container">
@@ -182,32 +183,6 @@
         </ul>
       </div>
     </div>
-    <div id="Contact" class="container-fluid body">
-      <div class="container">
-        <br><br><br>
-        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Contact us</h1>
-        </div>
-        <div class="container">
-          <figure class="figure">
-            <img src="contact_us_1.jpg"
-              class="img-responsive center-block" data-toggle="Tooltip" title="Some random clicks of our students	" alt="Image is not founds">
-            <figcaption class="figure-caption text-right">Contact us</figcaption>
-          </figure>
-          <button type="button" class="btn btn-success">
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true">   mahmoodyousaf975974@gmail.com </span>
-          </button>
-          <br><br>
-		<button type="button" class="btn btn-success">
-	<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"> 923346966320 </span>
-	</button>
-		</button><br><br>
-		<button type="button" class="btn btn-success">
-      <span class="glyphicon glyphicon-user
-      " aria-hidden="true"> Mahmood Yousaf</span>
-    </button>
-	<br><br><br>
-   </div>
-   </div>
    <div class="container-fluid">
     <br>
     <div class="container header">
