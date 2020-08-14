@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Learning Management System</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<style>
-    .nav {
-    background: linear-gradient(to bottom, #0000cc 0%, #cc3300 100%);
-}
-    .header {
-    background: linear-gradient(to bottom, #0000cc 0%, #00ffff 100%);
-}
-    .body {
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
-}
-</style>
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>Learning Management System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <style>
+        .nav {
+        background: linear-gradient(to bottom, #0000cc 0%, #cc3300 100%);
+    }
+        .header {
+        background: linear-gradient(to bottom, #0000cc 0%, #00ffff 100%);
+    }
+        .body {
+        background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    }
+    </style>
+    </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50" class="body">
     <nav class="navbar navbar-inverse navbar-fixed-top nav">
         <div class="container">
@@ -29,14 +29,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" data-toggle="Tooltip" title="AdvanceComputerWorldPlatform">Admin Panel</a>
+                <a class="navbar-brand" href="#" data-toggle="Tooltip" title="Admin panel">Admin Panel</a>
             </div>
             <div>
                 <div class="collapse navbar-collapse" id="target1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#ALogin" data-toggle="Tooltip" title="Admin Login">Admin Login</a></li>
-                        <li><a href="#TLogin" data-toggle="Tooltip" title="Teacher Login">Teacher Login</a></li>
-                        <li><a href="#SLogin" data-toggle="Tooltip" title="Sinup">Student Login</a></li>
+                        <li><a href="#Smanage" data-toggle="Tooltip" title="Manage students">Manage Students</a></li>
+                        <li><a href="#Tmanage" data-toggle="Tooltip" title="Manage teachers">Manage Teachers</a></li>
+                        <li><a href="#Cmanage" data-toggle="Tooltip" title="Manage courses">Manage Courses</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" data-toggle="Tooltip" title="Attendence">Review Attendence</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#Attend_students" data-toggle="Tooltip" title="Attendence students">Students</a></li>
+                                <li><a href="#Attend_teachers" data-toggle="Tooltip" title="Attendence teachers">Teachers</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" data-toggle="Tooltip" title="Manage classes and sections">Manage Classes and sections</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#Classes_manage" data-toggle="Tooltip" title="Manage Classes">Classes</a></li>
+                                <li><a href="#sections_manage" data-toggle="Tooltip" title="Manage Sections">Sections</a></li>
+                            </ul>
+                        </li>
                         <li><a href="login.html" data-toggle="Tooltip" title="Logout">Log Out</a></li>
                         <li><a href="#About" data-toggle="Tooltip" title="About">About</a></li>
                     </ul>
@@ -56,28 +68,12 @@
             <figcaption class="figure-caption text-center">University students using LMS</figcaption>
         </figure>
     </div>
-    <div id="ALogin" class="container-fluid body">
+    <div id="Smanage" class="container-fluid body">
         <br><br><br>
         <div class="container">
-            <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Admin Login</h1>
+            <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Students</h1>
             <br><br>
-            <form class="form-group" action="Validation.php" method="POST">
-                <label for="email">Email Address:</label>
-                <br><br>
-                <input type="email" class="form-control" placeholder="Enter your email" name = "email">
-                <br>
-                <label for="pwd">Passowrd:</label>
-                <br><br>
-                <input type="password" class="form-control" placeholder="Enter your passsord" name = "pwd">
-                <br>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox">Remember me
-                    </label>
-                    <br><br>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </form>
+
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
@@ -114,27 +110,59 @@
 
 
 
-  <div id="SLogin" class="container-fluid body">
+  <div id="Classes_manage" class="container-fluid body">
     <br><br><br>
     <div class="container">
-        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Student Login</h1>
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Classes</h1>
         <br><br>
-        <form class="form-group" action="/page.php">
-            <label for="email">Email Address:</label>
+        <form class="form-group" action="manage_classes.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Class</h1>
+            <br><b>
+            <label for="class">Class Name:</label>
             <br><br>
-            <input type="email" class="form-control" placeholder="Enter your email address" id="email">
+            <input type="name" class="form-control" placeholder="Enter Class name" name="class">
             <br>
-            <label for="pwd">Passowrd:</label>
+            <label for="id_for_class">Class Id:</label>
             <br><br>
-            <input type="password" class="form-control" placeholder="Enter your passsord" id="pwd">
+            <input type="number" class="form-control" placeholder="Enter id for class" name="id_for_class">
+            <input type="hidden" name="action" value="addClass">
             <br>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox">Remember me
-                </label>
-                <br><br>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <button type="submit" class="btn btn-primary btn-block">Click here to add class</button>
+        </form>
+
+        <form class="form-group" action="manage_classes.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Display Classes</h1>
+            <br><b>
+            <input type="hidden" name="action" value="displayClasses">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to display classes</button>
+        </form>
+
+
+        <form class="form-group" action="manage_classes.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Class</h1>
+            <br><b>
+            <label for="id_for_class">Class Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for class to delete" name="id_for_class">
+            <input type="hidden" name="action" value="deleteClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete class</button>
+        </form>
+
+
+        <form class="form-group" action="manage_classes.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search Class</h1>
+            <br><b>
+            <label for="id_for_class">Class Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for class for search" name="id_for_class">
+            <input type="hidden" name="action" value="searchClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search class</button>
         </form>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -159,7 +187,6 @@
               <li>Admin shall be able to login.</li> 
               <li>Admin shall be able to manage classes and sections</li>
               <li>Admin shall be able to manage teachers</li>
-              <li>Admin shall be able to manage students</li>
               <li>Admin shall be able to manage students</li>
               <li>Admin shall be able to review attendance of teachers and students</li>
               <li>Admin shall be able to manage courses</li>
