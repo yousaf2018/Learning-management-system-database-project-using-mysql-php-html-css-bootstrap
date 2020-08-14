@@ -12,7 +12,7 @@
         $id_for_class = $_POST["id_for_class"];
         $id_for_class = intval($id_for_class);
         $class = filter_var($class,FILTER_SANITIZE_STRING);
-        $query = "insert into departments values($id_for_class,'$class')";
+        $query = "insert into level values($id_for_class,'$class')";
         if(mysqli_query($connection,$query)){
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Insertion is successfull");}
@@ -21,7 +21,7 @@
                 header('Refresh:2; url=admin_panel.php');
         }           
         else{
-            echo "Error ".$query."br".mysqli_error($connection);
+            echo "Error "."br".mysqli_error($connection);
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Insertion is not successfull");}
                 </script>';
@@ -30,7 +30,7 @@
         }
     }
     else if($action=="displayClasses"){
-      $query = "select * from departments";
+      $query = "select * from level";
       $result = mysqli_query($connection,$query);
         if(mysqli_num_rows($result)>0){
               echo  "<!DOCTYPE html>";
@@ -50,15 +50,15 @@
                             echo '<table class="table table-dark table-striped">';
                             echo '<thead>';
                             echo '<tr>';
-                            echo '<th>Class Id</th>';
-                            echo '<th>Class Name</th>';
+                            echo '<th>Section Id</th>';
+                            echo '<th>Section Name</th>';
                             echo '</tr>';
                             echo '</thead>';
                             echo '<tbody>';
                             while($row = mysqli_fetch_assoc($result)){
                               echo '<tr>';
-                              echo '<td>'.$row["department_id"].'</td>';
-                              echo '<td>'.$row["Name"].'</td>';
+                              echo '<td>'.$row["level_id"].'</td>';
+                              echo '<td>'.$row["name"].'</td>';
                               echo '</tr>';
                             }
                             echo '</tbody>';
@@ -81,7 +81,7 @@
       else if($action=="deleteClass"){
         $id_for_class = $_POST["id_for_class"];
         $id_for_class = intval($id_for_class);
-        $query = "delete from departments where department_id=$id_for_class";
+        $query = "delete from level where level_id=$id_for_class";
         if(mysqli_query($connection,$query)){
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Deletion is successfull");}
@@ -103,13 +103,13 @@
       else if($action=="searchClass"){
         $id_for_class = $_POST["id_for_class"];
         $id_for_class = intval($id_for_class);
-        $query = "select Name from departments where department_id=$id_for_class";
+        $query = "select Name from level where level_id=$id_for_class";
         $result = mysqli_query($connection,$query);
         if(mysqli_num_rows($result)>0){
           foreach($result as $row){
               $name = $row["Name"];
           }
-            echo "Class name ".$name." with id ".$id_for_class;
+            echo "Section name ".$name." with id ".$id_for_class;
                 $connection->close();
                 echo "<br><br><br><br>";
                 echo "<a href='admin_panel.php'>Click here to go back admin panel</a>";          }           

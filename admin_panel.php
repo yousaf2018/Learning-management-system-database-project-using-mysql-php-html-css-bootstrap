@@ -169,6 +169,67 @@
 </div>
 
 
+
+
+<div id="sections_manage" class="container-fluid body">
+    <br><br><br>
+    <div class="container">
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Sections</h1>
+        <br><br>
+        <form class="form-group" action="manage_sections.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Section</h1>
+            <br><b>
+            <label for="class">Section Name:</label>
+            <br><br>
+            <input type="name" class="form-control" placeholder="Enter section name" name="class">
+            <br>
+            <label for="id_for_class">Section Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for section" name="id_for_class">
+            <input type="hidden" name="action" value="addClass">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to add sections</button>
+        </form>
+
+        <form class="form-group" action="manage_sections.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Display Sections</h1>
+            <br><b>
+            <input type="hidden" name="action" value="displayClasses">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to display Sections</button>
+        </form>
+
+
+        <form class="form-group" action="manage_sections.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Section</h1>
+            <br><b>
+            <label for="id_for_class">Section Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for section to delete" name="id_for_class">
+            <input type="hidden" name="action" value="deleteClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete section</button>
+        </form>
+
+
+        <form class="form-group" action="manage_sections.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search Section</h1>
+            <br><b>
+            <label for="id_for_class">Section Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for section for search" name="id_for_class">
+            <input type="hidden" name="action" value="searchClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search section</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
     <div id="About" class="container-fluid body">
       <div class="container">
       <br><br><br>
