@@ -110,6 +110,127 @@
 
 
 
+
+  <div id="Attend_students" class="container-fluid body">
+    <br><br><br>
+    <div class="container">
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Student Attendence Review</h1>
+        <br><br>
+        <form class="form-group" action="student_attend_review.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Update Attendence</h1>
+            <br><b>
+            <label for="class">Attendence Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter attendence id" name="id_for_attendence">
+            <br>
+            <label for="id_for_class">Status:</label>
+            <br><br>
+            <input type="name" class="form-control" placeholder="Enter status Absent or present" name="status">
+            <input type="hidden" name="action" value="updateAttend">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to update attendence</button>
+        </form>
+
+        <form class="form-group" action="student_attend_review.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search for Student Attendence</h1>
+        <br><b>
+            <label for="class">Student Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter Student id" name="id_for_students">
+            <br>
+            <label for="date">Attendence Date:</label>
+            <br><br>
+            <input type="DATE" class="form-control" placeholder="Enter Attendence date like 2018-22-12" name="date">
+            <input type="hidden" name="action" value="search">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search student attendence</button>
+        </form>
+
+
+        <form class="form-group" action="student_attend_review.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Attendence</h1>
+            <br><b>
+            <label for="id_for_class">Attendence Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for Attendence to delete" name="id_for_attendence">
+            <input type="hidden" name="action" value="deleteAttend">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete Attendence</button>
+        </form>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+
+<div id="Attend_teachers" class="container-fluid body">
+    <br><br><br>
+    <div class="container">
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Teacher Attendence Review</h1>
+        <br><br>
+        <form class="form-group" action="teacher_attendence_review.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Update Attendence</h1>
+            <br><b>
+            <label for="class">Attendence Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter attendence id" name="id_for_attendence">
+            <br>
+            <label for="id_for_class">Status:</label>
+            <br><br>
+            <input type="name" class="form-control" placeholder="Enter status Absent or present" name="status">
+            <input type="hidden" name="action" value="updateAttend">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to update attendence</button>
+        </form>
+
+        <form class="form-group" action="teacher_attendence_review.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search for Teacher Attendence</h1>
+        <br><b>
+            <label for="class">Teacher Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter teacher id" name="id_for_students">
+            <br>
+            <label for="date">Attendence Date:</label>
+            <br><br>
+            <input type="DATE" class="form-control" placeholder="Enter Attendence date like 2018-22-12" name="date">
+            <input type="hidden" name="action" value="search">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search teacher attendence</button>
+        </form>
+
+
+        <form class="form-group" action="teacher_attendence_review.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Attendence</h1>
+            <br><b>
+            <label for="id_for_class">Attendence Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for Attendence to delete" name="id_for_attendence">
+            <input type="hidden" name="action" value="deleteAttend">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete Attendence</button>
+        </form>
+        
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
   <div id="Classes_manage" class="container-fluid body">
     <br><br><br>
     <div class="container">
