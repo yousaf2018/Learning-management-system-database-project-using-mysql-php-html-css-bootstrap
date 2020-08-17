@@ -68,15 +68,94 @@
             <figcaption class="figure-caption text-center">University students using LMS</figcaption>
         </figure>
     </div>
-    <div id="Smanage" class="container-fluid body">
-        <br><br><br>
-        <div class="container">
-            <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Students</h1>
-            <br><br>
 
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+    <div id="Smanage" class="container-fluid body">
+    <br><br><br>
+    <div class="container">
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Students</h1>
+        <br><br>
+        <form class="form-group" action="manage_students.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Student</h1>
+            <br><b>
+            <label for="class">Student Name:</label>
+            <br><br>
+            <input type="name" class="form-control" placeholder="Enter Student name" name="name">
+            <br>
+            <label for="email">Email Address:</label>
+                <br><br>
+                <input type="email" class="form-control" placeholder="Enter email address" name = "email">
+                <br>
+            <label for="id_for_class">Student Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for class" name="id_for_student">
+
+
+            <label for="id_for_class">Class Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for class" name="id_for_class">
+
+
+            <label for="id_for_class">Section Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for section" name="id_for_section">
+
+            <input type="hidden" name="action" value="addStudent">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to add Student</button>
+        </form>
+
+        <form class="form-group" action="manage_students.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Display All Students</h1>
+            <br><b>
+            <input type="hidden" name="action" value="displayStudents">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to display students</button>
+        </form>
+
+
+        <form class="form-group" action="manage_students.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Student record</h1>
+            <br><b>
+            <label for="id_for_class">Student Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for Student to delete" name="id_for_class">
+            <input type="hidden" name="action" value="deleteClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete class</button>
+        </form>
+
+
+        <form class="form-group" action="manage_students.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search Student</h1>
+            <br><b>
+            <label for="id_for_class">Student Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for student for search" name="id_for_class">
+            <input type="hidden" name="action" value="searchClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search students</button>
+        </form>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+
 
 
 
