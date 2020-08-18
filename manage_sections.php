@@ -35,7 +35,7 @@
         if(mysqli_num_rows($result)>0){
               echo  "<!DOCTYPE html>";
               echo "<head>";
-               echo  "<title>Showing classes</title>";
+               echo  "<title>Showing sections</title>";
                echo  '<meta charset="utf-8">';
                echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
                echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">';

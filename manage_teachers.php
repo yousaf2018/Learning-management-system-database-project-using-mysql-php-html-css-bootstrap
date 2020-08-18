@@ -10,17 +10,13 @@
     if($action=="addStudent"){
         $name = $_POST["name"];
         $email = $_POST["email"];
-        $id_for_class = $_POST["id_for_class"];
         $Aid = $_SESSION["admin_id"];
         $id_for_student = $_POST["id_for_student"];
-        $id_for_section = $_POST["id_for_section"];
-        $id_for_class = intval($id_for_class);
         $id_for_student = intval($id_for_student);
-        $id_for_section = intval($id_for_section);
         $name = filter_var($name,FILTER_SANITIZE_STRING);
         $email = filter_var($email,FILTER_SANITIZE_EMAIL);
-        $query = "insert into students values($id_for_student,'$name','$email')";
-        $query_2 = "insert into manage_students values($Aid,$id_for_student,$id_for_section,$id_for_class)";
+        $query = "insert into teachers values($id_for_student,'$name','$email')";
+        $query_2 = "insert into manage_teachers values($Aid,$id_for_student)";
         if(mysqli_query($connection,$query) && mysqli_query($connection,$query_2)){
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Insertion is successfull");}
@@ -38,7 +34,7 @@
         }
     }
     else if($action=="displayStudents"){
-      $query = "select * from students inner join manage_students on students.std_id=manage_students.std_id";
+      $query = "select * from teachers inner join manage_teachers on teachers.Tid=manage_teachers.teacher_id";
       $result = mysqli_query($connection,$query);
         if(mysqli_num_rows($result)>0){
               echo  "<!DOCTYPE html>";
@@ -58,23 +54,17 @@
                             echo '<table class="table table-dark table-striped">';
                             echo '<thead>';
                             echo '<tr>';
-                            echo '<th>Student Id</th>';
-                            echo '<th>Student Name</th>';
+                            echo '<th>Teacher Id</th>';
+                            echo '<th>Teacher Name</th>';
                             echo '<th>Email</th>';
-                            echo '<th>Aid</th>';
-                            echo '<th>Section Id</th>';
-                            echo '<th>Class Id</th>';
                             echo '</tr>';
                             echo '</thead>';
                             echo '<tbody>';
                             while($row = mysqli_fetch_assoc($result)){
                               echo '<tr>';
-                              echo '<td>'.$row["std_id"].'</td>';
+                              echo '<td>'.$row["Tid"].'</td>';
                               echo '<td>'.$row["Name"].'</td>';
                               echo '<td>'.$row["Email"].'</td>';
-                              echo '<td>'.$row["Aid"].'</td>';
-                              echo '<td>'.$row["level_id"].'</td>';
-                              echo '<td>'.$row["department_id"].'</td>';
                               echo '</tr>';
                             }
                             echo '</tbody>';
@@ -97,7 +87,7 @@
       else if($action=="deleteClass"){
         $id_for_class = $_POST["id_for_class"];
         $id_for_class = intval($id_for_class);
-        $query = "delete from students where std_id=$id_for_class";
+        $query = "delete from teachers where Tid=$id_for_class";
         if(mysqli_query($connection,$query)){
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Deletion is successfull");}
@@ -106,7 +96,7 @@
                 header('Refresh:2; url=admin_panel.php');
         }           
         else{
-            echo "Error ".$query."br".mysqli_error($connection);
+            echo "Error ".mysqli_error($connection);
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Deletion is not successfull");}
                 </script>';
@@ -119,7 +109,7 @@
       else if($action=="searchClass"){
         $id_for_class = $_POST["id_for_class"];
         $id_for_class = intval($id_for_class);
-        $query = "select * from students inner join manage_students on students.std_id=manage_students.std_id and students.std_id=$id_for_class";
+        $query = "select * from teachers inner join manage_teachers on teachers.Tid=manage_teachers.Teacher_id  and teachers.Tid=$id_for_class";
         $result = mysqli_query($connection,$query);
         if(mysqli_num_rows($result)>0){
             echo  "<!DOCTYPE html>";
@@ -139,23 +129,17 @@
                           echo '<table class="table table-dark table-striped">';
                           echo '<thead>';
                           echo '<tr>';
-                          echo '<th>Student Id</th>';
-                          echo '<th>Student Name</th>';
+                          echo '<th>Teacher Id</th>';
+                          echo '<th>Teacher Name</th>';
                           echo '<th>Email</th>';
-                          echo '<th>Aid</th>';
-                          echo '<th>Section Id</th>';
-                          echo '<th>Class Id</th>';
                           echo '</tr>';
                           echo '</thead>';
                           echo '<tbody>';
                           while($row = mysqli_fetch_assoc($result)){
                             echo '<tr>';
-                            echo '<td>'.$row["std_id"].'</td>';
+                            echo '<td>'.$row["Tid"].'</td>';
                             echo '<td>'.$row["Name"].'</td>';
                             echo '<td>'.$row["Email"].'</td>';
-                            echo '<td>'.$row["Aid"].'</td>';
-                            echo '<td>'.$row["level_id"].'</td>';
-                            echo '<td>'.$row["department_id"].'</td>';
                             echo '</tr>';
                           }
                           echo '</tbody>';

@@ -95,7 +95,7 @@
                 <br>
             <label for="id_for_class">Student Id:</label>
             <br><br>
-            <input type="number" class="form-control" placeholder="Enter id for class" name="id_for_student">
+            <input type="number" class="form-control" placeholder="Enter id for student" name="id_for_student">
 
 
             <label for="id_for_class">Class Id:</label>
@@ -131,7 +131,7 @@
             <input type="number" class="form-control" placeholder="Enter id for Student to delete" name="id_for_class">
             <input type="hidden" name="action" value="deleteClass">
             <br><br><br>
-            <button type="submit" class="btn btn-primary btn-block">Click here to delete class</button>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete student record</button>
         </form>
 
 
@@ -151,6 +151,77 @@
 </div>
 
 
+
+
+
+
+
+
+
+
+
+<div id="Tmanage" class="container-fluid body">
+    <br><br><br>
+    <div class="container">
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Teachers</h1>
+        <br><br>
+        <form class="form-group" action="manage_teachers.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Teacher</h1>
+            <br><b>
+            <label for="class">Teacher Name:</label>
+            <br><br>
+            <input type="name" class="form-control" placeholder="Enter teacher name" name="name">
+            <br>
+            <label for="email">Email Address:</label>
+                <br><br>
+                <input type="email" class="form-control" placeholder="Enter email address" name = "email">
+                <br>
+            <label for="id_for_class">Teacher Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for teacher" name="id_for_student">
+
+            <input type="hidden" name="action" value="addStudent">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to add Teacher</button>
+        </form>
+
+        <form class="form-group" action="manage_teachers.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Display All Teachers</h1>
+            <br><b>
+            <input type="hidden" name="action" value="displayStudents">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to display Teachers</button>
+        </form>
+
+
+        <form class="form-group" action="manage_teachers.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Teacher record</h1>
+            <br><b>
+            <label for="id_for_class">Teacher Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for Teacher to delete" name="id_for_class">
+            <input type="hidden" name="action" value="deleteClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete teacher record</button>
+        </form>
+
+
+        <form class="form-group" action="manage_teachers.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search Teacher</h1>
+            <br><b>
+            <label for="id_for_class">Teacher Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for teacher for search" name="id_for_class">
+            <input type="hidden" name="action" value="searchClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search teacher</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 
 
 
