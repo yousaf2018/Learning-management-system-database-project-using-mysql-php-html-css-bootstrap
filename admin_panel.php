@@ -379,6 +379,73 @@
 
 
 
+<div id="Cmanage" class="container-fluid body">
+    <br><br><br>
+    <div class="container">
+        <h1 class="text-center" style="font-size:50px;font-family: italic;color: purple;border: 6px dotted purple;">Manage Courses</h1>
+        <br><br>
+        <form class="form-group" action="manage_courses.php" method="POST">
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Course</h1>
+            <br><b>
+            <label for="class">Course Name:</label>
+            <br><br>
+            <input type="name" class="form-control" placeholder="Enter Course name" name="class">
+            <br>
+            <label for="id_for_class">Course Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for Course" name="id_for_class">
+            <input type="hidden" name="action" value="addClass">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to add Course</button>
+        </form>
+
+        <form class="form-group" action="manage_courses.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Display Courses</h1>
+            <br><b>
+            <input type="hidden" name="action" value="displayClasses">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to display Courses</button>
+        </form>
+
+
+        <form class="form-group" action="manage_courses.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Delete Course</h1>
+            <br><b>
+            <label for="id_for_class">Course Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for course to delete" name="id_for_class">
+            <input type="hidden" name="action" value="deleteClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to delete course</button>
+        </form>
+
+
+        <form class="form-group" action="manage_courses.php" method="POST">
+            <br><br><br>
+        <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Search Course</h1>
+            <br><b>
+            <label for="id_for_class">Class Id:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter id for course for search" name="id_for_class">
+            <input type="hidden" name="action" value="searchClass">
+            <br><br><br>
+            <button type="submit" class="btn btn-primary btn-block">Click here to search course</button>
+        </form>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
   <div id="Classes_manage" class="container-fluid body">
