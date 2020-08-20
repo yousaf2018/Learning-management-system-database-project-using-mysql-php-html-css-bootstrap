@@ -14,14 +14,32 @@
         $Aid = $_SESSION["admin_id"];
         $id_for_student = $_POST["id_for_student"];
         $id_for_section = $_POST["id_for_section"];
+        $age = $_POST["age"];
+        $age = intval($age);
+        $birth = $_POST["birth"];
+        $gender = $_POST["gender"];
         $id_for_class = intval($id_for_class);
         $id_for_student = intval($id_for_student);
         $id_for_section = intval($id_for_section);
+        $cgpa = $_POST["cgpa"];
+        $cgpa = floatval($cgpa);
+        $inter = $_POST["inter"];
+        $inter = intval($inter);
+        $personal = $_POST["personal"];
+        $personal = intval($personal);
+        $academic = $_POST["academic"];
+        $action = intval($academic);
+        $matric = $_POST["matric"];
+        $matric = intval($matric);
         $name = filter_var($name,FILTER_SANITIZE_STRING);
-        $email = filter_var($email,FILTER_SANITIZE_EMAIL);
+        $birth = filter_var($birth,FILTER_SANITIZE_STRING);
+        $gender = filter_var($gender,FILTER_SANITIZE_STRING);
         $query = "insert into students values($id_for_student,'$name','$email')";
-        $query_2 = "insert into manage_students values($Aid,$id_for_student,$id_for_section,$id_for_class)";
-        if(mysqli_query($connection,$query) && mysqli_query($connection,$query_2)){
+        $query_4 = "insert into academic_details values($academic,$cgpa,$inter,$matric)";
+        if(mysqli_query($connection,$query) && mysqli_query($connection,$query_3)
+            && mysqli_query($connection,$query_4)){
+              $query_2 = "insert into manage_students values($Aid,$id_for_student,$id_for_section,$id_for_class,$personal,$academic)";
+              $result = mysqli_query($connection,$query_2);
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Insertion is successfull");}
                 </script>';
@@ -34,7 +52,7 @@
                 alert("Insertion is not successfull");}
                 </script>';
             $connection->close();
-            header('Refresh:2; url=admin_panel.php');
+           header('Refresh:2; url=admin_panel.php');
         }
     }
     else if($action=="displayStudents"){
@@ -53,7 +71,7 @@
               echo '</head>';
               echo '<body>';
                   
-              echo '<div class="container">';
+              echo '<div class="container-fluid">';
                             echo "<br>";
                             echo '<table class="table table-dark table-striped">';
                             echo '<thead>';
@@ -64,6 +82,8 @@
                             echo '<th>Aid</th>';
                             echo '<th>Section Id</th>';
                             echo '<th>Class Id</th>';
+                            echo '<th>Personal Id</th>';
+                            echo '<th>Academic Id</th>';
                             echo '</tr>';
                             echo '</thead>';
                             echo '<tbody>';
@@ -75,6 +95,8 @@
                               echo '<td>'.$row["Aid"].'</td>';
                               echo '<td>'.$row["level_id"].'</td>';
                               echo '<td>'.$row["department_id"].'</td>';
+                              echo '<td>'.$row["pid"];
+                              echo '<td>'.$row["acad_id1"];
                               echo '</tr>';
                             }
                             echo '</tbody>';

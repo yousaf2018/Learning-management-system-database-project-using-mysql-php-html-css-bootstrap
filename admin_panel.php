@@ -86,26 +86,69 @@
         <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Student</h1>
             <br><b>
             <label for="class">Student Name:</label>
-            <br><br>
+            <br>
             <input type="name" class="form-control" placeholder="Enter Student name" name="name">
             <br>
             <label for="email">Email Address:</label>
-                <br><br>
+                <br>
                 <input type="email" class="form-control" placeholder="Enter email address" name = "email">
                 <br>
             <label for="id_for_class">Student Id:</label>
-            <br><br>
+            <br>
             <input type="number" class="form-control" placeholder="Enter id for student" name="id_for_student">
 
 
             <label for="id_for_class">Class Id:</label>
-            <br><br>
+            <br>
             <input type="number" class="form-control" placeholder="Enter id for class" name="id_for_class">
 
 
             <label for="id_for_class">Section Id:</label>
-            <br><br>
+            <br>
             <input type="number" class="form-control" placeholder="Enter id for section" name="id_for_section">
+
+
+
+
+            <label for="personal">Personal Id:</label>
+            <br>
+            <input type="number" class="form-control" placeholder="Enter Personal id for student" name="personal">
+
+            <label for="age">Age:</label>
+            <br>
+            <input type="number" class="form-control" placeholder="Enter age for student" name="age">
+
+
+            <label for="birth">Date of Birth:</label>
+            <br>
+            <input type="date" class="form-control" placeholder="Enter Date of Birth" name="birth">
+
+
+            <label for="gender">Gender:</label>
+            <br>
+            <input type="name" class="form-control" placeholder="Enter Gender for section" name="gender">
+
+
+
+
+            <label for="academic">Academic Id:</label>
+            <br>
+            <input type="number" class="form-control" placeholder="Enter id for class" name="academic">
+
+
+            <label for="cgpa">Current Cgpa:</label>
+            <br><br>
+            <input type="float" class="form-control" placeholder="Enter current CGPA for student" name="cgpa">
+
+
+            <label for="inter">Intermediate Marks:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter Intermediate marks for student" name="inter">
+
+
+            <label for="matric">Matric Marks:</label>
+            <br><br>
+            <input type="number" class="form-control" placeholder="Enter Matric Marks for student" name="matric">
 
             <input type="hidden" name="action" value="addStudent">
             <br>
@@ -169,16 +212,36 @@
         <h1 class="text-center" style="font-size:40px;font-family: italic;color: purple;">Add Teacher</h1>
             <br><b>
             <label for="class">Teacher Name:</label>
-            <br><br>
-            <input type="name" class="form-control" placeholder="Enter teacher name" name="name">
             <br>
+            <input type="name" class="form-control" placeholder="Enter teacher name" name="name">
+            
             <label for="email">Email Address:</label>
-                <br><br>
-                <input type="email" class="form-control" placeholder="Enter email address" name = "email">
                 <br>
+                <input type="email" class="form-control" placeholder="Enter email address" name = "email">
+                
             <label for="id_for_class">Teacher Id:</label>
-            <br><br>
+            <br>
             <input type="number" class="form-control" placeholder="Enter id for teacher" name="id_for_student">
+
+
+
+            <label for="personal">Personal Id:</label>
+            <br>
+            <input type="number" class="form-control" placeholder="Enter Personal id for Teacher" name="personal">
+
+            <label for="age">Age:</label>
+            <br>
+            <input type="number" class="form-control" placeholder="Enter age for student" name="age">
+
+
+            <label for="birth">Date of Birth:</label>
+            <br>
+            <input type="date" class="form-control" placeholder="Enter Date of Birth" name="birth">
+
+
+            <label for="gender">Gender:</label>
+            <br>
+            <input type="name" class="form-control" placeholder="Enter Gender for section" name="gender">
 
             <input type="hidden" name="action" value="addStudent">
             <br>

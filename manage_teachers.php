@@ -11,13 +11,21 @@
         $name = $_POST["name"];
         $email = $_POST["email"];
         $Aid = $_SESSION["admin_id"];
+        $age = $_POST["age"];
+        $age = intval($age);
+        $birth = $_POST["birth"];
+        $gender = $_POST["gender"];
+        $personal = $_POST["personal"];
+        $personal = intval($personal);
         $id_for_student = $_POST["id_for_student"];
         $id_for_student = intval($id_for_student);
         $name = filter_var($name,FILTER_SANITIZE_STRING);
         $email = filter_var($email,FILTER_SANITIZE_EMAIL);
         $query = "insert into teachers values($id_for_student,'$name','$email')";
-        $query_2 = "insert into manage_teachers values($Aid,$id_for_student)";
-        if(mysqli_query($connection,$query) && mysqli_query($connection,$query_2)){
+        $query_2 = "insert into manage_teachers values($Aid,$id_for_student,$personal)";
+        $query_3 = "insert into personal_info values($personal,$age,'$birth','$gender')";
+        if(mysqli_query($connection,$query) && mysqli_query($connection,$query_3)){
+          $result = mysqli_query($connection,$query_2);
             echo '<script type="text/javascript"> window.onload=function(){
                 alert("Insertion is successfull");}
                 </script>';
@@ -57,6 +65,7 @@
                             echo '<th>Teacher Id</th>';
                             echo '<th>Teacher Name</th>';
                             echo '<th>Email</th>';
+                            echo '<th>Personal Id</th>';
                             echo '</tr>';
                             echo '</thead>';
                             echo '<tbody>';
@@ -65,6 +74,7 @@
                               echo '<td>'.$row["Tid"].'</td>';
                               echo '<td>'.$row["Name"].'</td>';
                               echo '<td>'.$row["Email"].'</td>';
+                              echo '<td>'.$row["pid"];
                               echo '</tr>';
                             }
                             echo '</tbody>';
